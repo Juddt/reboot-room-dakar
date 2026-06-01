@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation — Reboot Room Dakar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="reservation-page">
+
+    <main class="booking-page">
+
+        <a href="index.html" class="booking-back">← Retour au site</a>
+
+        <section class="booking-card">
+
+            <p class="service-label">Réservation</p>
+
+            <h1>Réserver une expérience</h1>
+
+            <p class="booking-intro">
+                Sélectionnez une ou plusieurs expériences, choisissez une date et un créneau.
+                La demande sera envoyée directement sur WhatsApp pour confirmation.
+            </p>
+
+            <div class="booking-form">
+
+                <div class="booking-step">
+                    <span>01</span>
+                    <h2>Choisissez vos expériences</h2>
+
+                    <div class="booking-services">
+                        <label>
+                            <input type="checkbox" value="Cryo / Ice Bath">
+                            <span>Cryo / Ice Bath</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Hammam">
+                            <span>Hammam</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Massage">
+                            <span>Massage</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Pressothérapie">
+                            <span>Pressothérapie</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Douche Vitamine C">
+                            <span>Douche Vitamine C</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Parcours Reboot">
+                            <span>Parcours Reboot</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="booking-step">
+                    <span>02</span>
+                    <h2>Choisissez votre créneau</h2>
+
+                    <div class="booking-grid">
+                        <label>
+                            Date souhaitée
+                            <input type="date" id="bookingDate">
+                        </label>
+
+                        <label>
+                            Heure souhaitée
+                            <select id="bookingTime">
+                                <option value="">Choisir un créneau</option>
+                                <option value="06:30">06:30</option>
+                                <option value="07:00">07:00</option>
+                                <option value="07:30">07:30</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="booking-step">
+                    <span>03</span>
+                    <h2>Vos informations</h2>
+
+                    <div class="booking-grid">
+                        <label>
+                            Nom
+                            <input type="text" id="bookingName" placeholder="Votre nom">
+                        </label>
+
+                        <label>
+                            Téléphone
+                            <input type="tel" id="bookingPhone" placeholder="Ex : 77 123 45 67">
+                        </label>
+                    </div>
+
+                    <label>
+                        Message optionnel
+                        <textarea id="bookingMessage" placeholder="Précision, demande particulière..."></textarea>
+                    </label>
+                </div>
+
+                <button id="bookingButton" class="booking-button">
+                    Confirmer sur WhatsApp
+                </button>
+
+                <p class="booking-note">
+                    Après validation, l’équipe Reboot Room vous confirmera le rendez-vous.
+                    Cette version permet une demande de réservation rapide ; la confirmation finale se fait par WhatsApp.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
