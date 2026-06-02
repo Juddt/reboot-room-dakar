@@ -32,42 +32,125 @@
 
             <div class="booking-form">
 
-                <div class="booking-step">
+               <div class="booking-step">
                     <span>01</span>
                     <h2>Choisissez vos expériences</h2>
 
-                    <div class="booking-services">
-                        <label>
-                            <input type="checkbox" value="Cryo / Ice Bath">
+                    <div class="booking-tabs">
+                        <button type="button" class="booking-tab active" data-booking-tab="sessions">Séances</button>
+                        <button type="button" class="booking-tab" data-booking-tab="reboot">Parcours Reboot</button>
+                        <button type="button" class="booking-tab" data-booking-tab="performance">Performance</button>
+                        <button type="button" class="booking-tab" data-booking-tab="hammam">Hammam</button>
+                    </div>
+
+                    <div class="booking-options active" id="sessions">
+                        <button type="button" class="booking-option" data-service="Cryo / Ice Bath">
                             <span>Cryo / Ice Bath</span>
-                        </label>
+                            <strong>10 000 FCFA</strong>
+                        </button>
 
-                        <label>
-                            <input type="checkbox" value="Hammam">
-                            <span>Hammam</span>
-                        </label>
+                        <button type="button" class="booking-option" data-service="Hammam 45 min">
+                            <span>Hammam 45 min</span>
+                            <strong>25 000 FCFA</strong>
+                        </button>
 
-                        <label>
-                            <input type="checkbox" value="Massage">
-                            <span>Massage</span>
-                        </label>
+                        <button type="button" class="booking-option" data-service="Pressothérapie 30 min">
+                            <span>Pressothérapie 30 min</span>
+                            <strong>12 000 FCFA</strong>
+                        </button>
 
-                        <label>
-                            <input type="checkbox" value="Pressothérapie">
-                            <span>Pressothérapie</span>
-                        </label>
+                        <button type="button" class="booking-option" data-service="Massage 30 min">
+                            <span>Massage 30 min</span>
+                            <strong>15 000 FCFA</strong>
+                        </button>
 
-                        <label>
-                            <input type="checkbox" value="Douche Vitamine C">
+                        <button type="button" class="booking-option" data-service="Massage 60 min">
+                            <span>Massage 60 min</span>
+                            <strong>25 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Douche Vitamine C">
                             <span>Douche Vitamine C</span>
-                        </label>
+                            <strong>5 000 FCFA</strong>
+                        </button>
+                    </div>
 
-                        <label>
-                            <input type="checkbox" value="Parcours Reboot">
-                            <span>Parcours Reboot</span>
-                        </label>
+                    <div class="booking-options" id="reboot">
+                        <button type="button" class="booking-option" data-service="Recovery">
+                            <span>Recovery</span>
+                            <small>Cryo · Pressothérapie · Douche Vitamine C</small>
+                            <strong>24 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Therapy">
+                            <span>Therapy</span>
+                            <small>Hammam · Cryo · Douche Vitamine C</small>
+                            <strong>36 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Régénération">
+                            <span>Régénération</span>
+                            <small>Hammam · Massage 30 min · Douche Vitamine C</small>
+                            <strong>40 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Détente">
+                            <span>Détente</span>
+                            <small>Hammam · Massage relaxant 60 min</small>
+                            <strong>45 000 FCFA</strong>
+                        </button>
+                    </div>
+
+                    <div class="booking-options" id="performance">
+                        <button type="button" class="booking-option" data-service="Performance">
+                            <span>Performance</span>
+                            <small>Cryo · Massage 30 min · Pressothérapie · Douche Vitamine C</small>
+                            <strong>38 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Intense">
+                            <span>Intense</span>
+                            <small>Hammam · Cryo · Pressothérapie · Douche Vitamine C</small>
+                            <strong>45 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Reboot Expérience">
+                            <span>Reboot Expérience</span>
+                            <small>Hammam · Cryo · Massage 60 min · Pressothérapie · Douche Vitamine C</small>
+                            <strong>65 000 FCFA</strong>
+                        </button>
+                    </div>
+
+                    <div class="booking-options" id="hammam">
+                        <button type="button" class="booking-option" data-service="Hammam — L’Essentiel">
+                            <span>L’Essentiel</span>
+                            <small>Gommage · Lavage cheveux · Savonnage</small>
+                            <strong>25 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Hammam — Traditionnel">
+                            <span>Traditionnel</span>
+                            <small>Rhassoul · Huile d’argan</small>
+                            <strong>35 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Hammam — Détente">
+                            <span>Détente</span>
+                            <small>Gommage · Massage relaxant 60 min</small>
+                            <strong>45 000 FCFA</strong>
+                        </button>
+
+                        <button type="button" class="booking-option" data-service="Hammam — Royal">
+                            <span>Royal</span>
+                            <small>Rituel complet · Massage · Visage · Pressothérapie</small>
+                            <strong>100 000 FCFA</strong>
+                        </button>
                     </div>
                 </div>
+                                
+
+
+                
 
                 <div class="booking-step">
                     <span>02</span>

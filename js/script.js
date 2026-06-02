@@ -69,38 +69,69 @@ pricingTabs.forEach((tab) => {
 });
 
 
-
 const bookingButton = document.getElementById("bookingButton");
+const bookingTabs = document.querySelectorAll(".booking-tab");
+const bookingOptionsGroups = document.querySelectorAll(".booking-options");
+const bookingOptions = document.querySelectorAll(".booking-option");
+
+bookingTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const target = tab.dataset.bookingTab;
+
+        bookingTabs.forEach((button) => {
+            button.classList.remove("active");
+        });
+
+        bookingOptionsGroups.forEach((group) => {
+            group.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+        document.getElementById(target).classList.add("active");
+    });
+});
+
+bookingOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+        option.classList.toggle("selected");
+    });
+});
 
 if (bookingButton) {
     bookingButton.addEventListener("click", () => {
-        const selectedServices = document.querySelectorAll(".booking-services input:checked");
+        const selectedOptions = document.querySelectorAll(".booking-option.selected");
+
         let services = [];
 
-        selectedServices.forEach((service) => {
-            services.push(service.value);
+        selectedOptions.forEach((option) => {
+            services.push(option.dataset.service);
         });
+
         const date = document.getElementById("bookingDate").value;
         const time = document.getElementById("bookingTime").value;
         const name = document.getElementById("bookingName").value;
         const phone = document.getElementById("bookingPhone").value;
         const message = document.getElementById("bookingMessage").value;
 
-        if (services.length === 0 || !date || !time || !name || !phone)  {
-            alert("Merci de remplir tous les champs obligatoires.");
+        if (services.length === 0 || !date || !time || !name) {
+            alert("Merci de choisir au moins une expérience, une date, une heure et votre nom.");
             return;
         }
 
         const whatsappNumber = "221776722346";
 
+        const servicesText = services
+            .map((service) => `- ${service}`)
+            .join("%0A");
+
         const whatsappMessage =
             `Bonjour Reboot Room,%0A%0A` +
-            `Je souhaite réserver une séance.%0A%0A` +
-            `Expériences : ${services.join(", ")}%0A`+
+            `Je souhaite faire une demande de réservation.%0A%0A` +
+            `Expériences choisies :%0A${servicesText}%0A%0A` +
             `Date : ${date}%0A` +
             `Heure : ${time}%0A` +
             `Nom : ${name}%0A` +
-            `Téléphone : ${phone}%0A` +
+            `Téléphone : ${phone || "WhatsApp"}%0A` +
             `Commentaire : ${message || "Aucun"}%0A%0A` +
             `Merci de me confirmer la disponibilité.`;
 
@@ -109,6 +140,10 @@ if (bookingButton) {
         window.open(whatsappURL, "_blank");
     });
 }
+
+
+
+
 
 
 const menuToggle = document.getElementById("menuToggle");
