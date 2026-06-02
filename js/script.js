@@ -1,17 +1,15 @@
+/* CARROUSELS SERVICES */
 const carousels = document.querySelectorAll(".service-carousel");
 
 carousels.forEach((carousel) => {
-
     const images = carousel.querySelectorAll("img");
     const dots = carousel.querySelectorAll(".dot");
-
     const prevBtn = carousel.querySelector(".prev");
     const nextBtn = carousel.querySelector(".next");
 
     let currentIndex = 0;
 
     function showImage(index) {
-
         images.forEach((image) => {
             image.classList.remove("active");
         });
@@ -21,33 +19,39 @@ carousels.forEach((carousel) => {
         });
 
         images[index].classList.add("active");
-        dots[index].classList.add("active");
+
+        if (dots[index]) {
+            dots[index].classList.add("active");
+        }
     }
 
-    nextBtn.addEventListener("click", () => {
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            currentIndex++;
 
-        currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
 
-        if (currentIndex >= images.length) {
-            currentIndex = 0;
-        }
+            showImage(currentIndex);
+        });
+    }
 
-        showImage(currentIndex);
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            currentIndex--;
 
-    prevBtn.addEventListener("click", () => {
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
 
-        currentIndex--;
-
-        if (currentIndex < 0) {
-            currentIndex = images.length - 1;
-        }
-
-        showImage(currentIndex);
-    });
-
+            showImage(currentIndex);
+        });
+    }
 });
 
+
+/* ONGLES TARIFS PAGE ACCUEIL */
 const pricingTabs = document.querySelectorAll(".pricing-tab");
 const pricingContents = document.querySelectorAll(".pricing-content");
 
@@ -64,15 +68,23 @@ pricingTabs.forEach((tab) => {
         });
 
         tab.classList.add("active");
-        document.getElementById(target).classList.add("active");
+
+        const targetContent = document.getElementById(target);
+
+        if (targetContent) {
+            targetContent.classList.add("active");
+        }
     });
 });
 
 
+/* RESERVATION */
 const bookingButton = document.getElementById("bookingButton");
 const bookingTabs = document.querySelectorAll(".booking-tab");
 const bookingOptionsGroups = document.querySelectorAll(".booking-options");
 const bookingOptions = document.querySelectorAll(".booking-option");
+const bookingSummaryList = document.getElementById("bookingSummaryList");
+const bookingTotal = document.getElementById("bookingTotal");
 
 bookingTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -87,9 +99,54 @@ bookingTabs.forEach((tab) => {
         });
 
         tab.classList.add("active");
-        document.getElementById(target).classList.add("active");
+
+        const targetGroup = document.getElementById(target);
+
+        if (targetGroup) {
+            targetGroup.classList.add("active");
+        }
     });
 });
+
+function getPriceNumber(option) {
+    const priceText = option.querySelector("strong").textContent;
+
+    return parseInt(
+        priceText
+            .replace(/\s/g, "")
+            .replace("FCFA", "")
+    );
+}
+
+function updateBookingSummary() {
+    if (!bookingSummaryList || !bookingTotal) return;
+
+    const selectedOptions = document.querySelectorAll(".booking-option.selected");
+
+    bookingSummaryList.innerHTML = "";
+
+    if (selectedOptions.length === 0) {
+        bookingSummaryList.innerHTML = "<li>Aucune expérience sélectionnée</li>";
+        bookingTotal.textContent = "0 FCFA";
+        return;
+    }
+
+    let total = 0;
+
+    selectedOptions.forEach((option) => {
+        const serviceName = option.dataset.service;
+        const price = getPriceNumber(option);
+
+        total += price;
+
+        const li = document.createElement("li");
+        li.textContent = serviceName;
+
+        bookingSummaryList.appendChild(li);
+    });
+
+    bookingTotal.textContent = total.toLocaleString("fr-FR") + " FCFA";
+}
 
 bookingOptions.forEach((option) => {
     option.addEventListener("click", () => {
@@ -103,9 +160,11 @@ if (bookingButton) {
         const selectedOptions = document.querySelectorAll(".booking-option.selected");
 
         let services = [];
+        let total = 0;
 
         selectedOptions.forEach((option) => {
             services.push(option.dataset.service);
+            total += getPriceNumber(option);
         });
 
         const date = document.getElementById("bookingDate").value;
@@ -125,10 +184,13 @@ if (bookingButton) {
             .map((service) => `- ${service}`)
             .join("%0A");
 
+        const totalText = total.toLocaleString("fr-FR") + " FCFA";
+
         const whatsappMessage =
             `Bonjour Reboot Room,%0A%0A` +
             `Je souhaite faire une demande de réservation.%0A%0A` +
             `Expériences choisies :%0A${servicesText}%0A%0A` +
+            `Total : ${totalText}%0A%0A` +
             `Date : ${date}%0A` +
             `Heure : ${time}%0A` +
             `Nom : ${name}%0A` +
@@ -143,38 +205,12 @@ if (bookingButton) {
 }
 
 
-
-const bookingSummaryList = document.getElementById("bookingSummaryList");
-
-function updateBookingSummary() {
-    const selectedOptions = document.querySelectorAll(".booking-option.selected");
-
-    bookingSummaryList.innerHTML = "";
-
-    if (selectedOptions.length === 0) {
-        bookingSummaryList.innerHTML = "<li>Aucune expérience sélectionnée</li>";
-        return;
-    }
-
-    selectedOptions.forEach((option) => {
-        const serviceName = option.dataset.service;
-        const price = option.querySelector("strong").textContent;
-
-        const li = document.createElement("li");
-        li.textContent = `${serviceName} — ${price}`;
-
-        bookingSummaryList.appendChild(li);
-    });
-}
-
-
-
-
+/* MENU MOBILE */
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector("nav");
 const navLinks = document.querySelectorAll("nav a");
 
-if (menuToggle) {
+if (menuToggle && nav) {
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("active");
     });
@@ -182,6 +218,8 @@ if (menuToggle) {
 
 navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-        nav.classList.remove("active");
+        if (nav) {
+            nav.classList.remove("active");
+        }
     });
 });
