@@ -1318,23 +1318,26 @@ nav .reservation-btn:hover {
     }
 
     .pricing-tabs {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 
-        overflow-x: auto;
-        padding-bottom: 8px;
-
-        scrollbar-width: none;
-    }
-
-    .pricing-tabs::-webkit-scrollbar {
-        display: none;
+    overflow: visible;
+    padding-bottom: 0;
     }
 
     .pricing-tab {
-        flex-shrink: 0;
+        width: 100%;
+        min-height: 54px;
+
+        padding: 13px 10px;
+
+        font-size: 10px;
+        letter-spacing: 1.6px;
+        text-align: center;
     }
+
+  
 
     .pricing-cards {
         grid-template-columns: 1fr;
