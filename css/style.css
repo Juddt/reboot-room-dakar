@@ -1012,6 +1012,14 @@ nav .reservation-btn:hover {
 
 
 /*------------------------------------------------ RESPONSIVE MOBILE ------------------------------------------------*/
+.mobile-only {
+    display: none;
+}
+
+.desktop-separator {
+    display: none;
+}
+
 
 /* BOUTON BURGER CACHÉ SUR DESKTOP */
 .menu-toggle {
@@ -1274,5 +1282,8 @@ nav .reservation-btn:hover {
     .booking-form textarea {
         font-size: 14px;
         padding: 14px;
+    }
+    .mobile-only {
+        display: block;
     }
 }
