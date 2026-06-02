@@ -1012,16 +1012,11 @@ nav .reservation-btn:hover {
 
 
 /*------------------------------------------------ RESPONSIVE MOBILE ------------------------------------------------*/
-.mobile-only {
+
+.mobile-service {
     display: none;
 }
 
-.desktop-separator {
-    display: none;
-}
-
-
-/* BOUTON BURGER CACHÉ SUR DESKTOP */
 .menu-toggle {
     display: none;
 }
@@ -1283,7 +1278,23 @@ nav .reservation-btn:hover {
         font-size: 14px;
         padding: 14px;
     }
-    .mobile-only {
-        display: block;
-    }
+   .mobile-service {
+    display: block;
+}
+
+.mobile-menu-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.mobile-menu-separator {
+    height: 1px;
+    margin: 18px 0;
+    padding: 0;
+    background-color: rgba(138, 106, 60, 0.35);
+}
 }
