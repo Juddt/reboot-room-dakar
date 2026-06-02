@@ -113,9 +113,16 @@ if (bookingButton) {
 
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector("nav");
+const navLinks = document.querySelectorAll("nav a");
 
 if (menuToggle) {
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("active");
     });
 }
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
