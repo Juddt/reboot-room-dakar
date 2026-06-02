@@ -94,6 +94,7 @@ bookingTabs.forEach((tab) => {
 bookingOptions.forEach((option) => {
     option.addEventListener("click", () => {
         option.classList.toggle("selected");
+        updateBookingSummary();
     });
 });
 
@@ -142,6 +143,29 @@ if (bookingButton) {
 }
 
 
+
+const bookingSummaryList = document.getElementById("bookingSummaryList");
+
+function updateBookingSummary() {
+    const selectedOptions = document.querySelectorAll(".booking-option.selected");
+
+    bookingSummaryList.innerHTML = "";
+
+    if (selectedOptions.length === 0) {
+        bookingSummaryList.innerHTML = "<li>Aucune expérience sélectionnée</li>";
+        return;
+    }
+
+    selectedOptions.forEach((option) => {
+        const serviceName = option.dataset.service;
+        const price = option.querySelector("strong").textContent;
+
+        const li = document.createElement("li");
+        li.textContent = `${serviceName} — ${price}`;
+
+        bookingSummaryList.appendChild(li);
+    });
+}
 
 
 
