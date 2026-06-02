@@ -1151,7 +1151,6 @@ nav .reservation-btn:hover {
     color: var(--gold);
 }
 
-
 /*------------------------------------------------ RESPONSIVE MOBILE ------------------------------------------------*/
 
 .mobile-service {
@@ -1162,6 +1161,28 @@ nav .reservation-btn:hover {
     display: none;
 }
 
+/* Correction ancres desktop */
+#about,
+#tarifs,
+#footer,
+#cryo,
+#hammam,
+#massages,
+#pressotherapie,
+#vitamine-c {
+    scroll-margin-top: 170px;
+}
+
+/* Ajustements réservation desktop */
+.booking-total {
+    font-size: 28px;
+}
+
+.booking-grid + label {
+    margin-top: 18px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
     header {
@@ -1173,7 +1194,6 @@ nav .reservation-btn:hover {
         padding: 0 18px;
 
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
 
@@ -1207,7 +1227,6 @@ nav .reservation-btn:hover {
         width: 26px;
         height: 2px;
         background-color: #11100e;
-        display: block;
     }
 
     nav {
@@ -1229,10 +1248,8 @@ nav .reservation-btn:hover {
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
         gap: 0;
-
         padding: 24px;
     }
 
@@ -1256,7 +1273,6 @@ nav .reservation-btn:hover {
         font-size: 11px;
         letter-spacing: 3px;
         text-transform: uppercase;
-
         color: var(--gold);
         margin-bottom: 10px;
     }
@@ -1265,12 +1281,22 @@ nav .reservation-btn:hover {
         height: 1px;
         margin: 18px 0;
         padding: 0;
-
         background-color: rgba(138, 106, 60, 0.35);
     }
 
     .services-strip {
         display: none;
+    }
+
+    #about,
+    #tarifs,
+    #footer,
+    #cryo,
+    #hammam,
+    #massages,
+    #pressotherapie,
+    #vitamine-c {
+        scroll-margin-top: 85px;
     }
 
     .hero {
@@ -1293,7 +1319,6 @@ nav .reservation-btn:hover {
     .service-section {
         grid-template-columns: 1fr;
         gap: 40px;
-
         padding: 75px 24px;
     }
 
@@ -1318,26 +1343,30 @@ nav .reservation-btn:hover {
     }
 
     .pricing-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+        width: 100%;
+        max-width: 100%;
 
-    overflow: visible;
-    padding-bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        margin: 0 auto 40px;
+        overflow: visible;
     }
 
     .pricing-tab {
         width: 100%;
         min-height: 54px;
 
-        padding: 13px 10px;
+        padding: 13px 8px;
+
+        white-space: normal;
+        text-align: center;
 
         font-size: 10px;
-        letter-spacing: 1.6px;
-        text-align: center;
+        letter-spacing: 1.4px;
+        line-height: 1.4;
     }
-
-  
 
     .pricing-cards {
         grid-template-columns: 1fr;
@@ -1393,12 +1422,12 @@ nav .reservation-btn:hover {
     }
 
     .booking-card {
-        padding: 34px 22px;
+        padding: 30px 18px;
         max-width: 100%;
     }
 
     .booking-card h1 {
-        font-size: 48px;
+        font-size: 42px;
         line-height: 0.95;
     }
 
@@ -1411,7 +1440,7 @@ nav .reservation-btn:hover {
     }
 
     .booking-step h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .booking-form input,
@@ -1446,13 +1475,13 @@ nav .reservation-btn:hover {
     }
 
     .booking-options {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
     .booking-option {
-        min-height: auto;
-        padding: 18px 16px;
+        min-height: 118px;
+        padding: 14px 12px;
 
         background-color: transparent;
         color: var(--black);
@@ -1462,20 +1491,20 @@ nav .reservation-btn:hover {
     }
 
     .booking-option span {
-        font-size: 28px;
+        font-size: 22px;
+        line-height: 1.05;
         color: var(--black);
     }
 
     .booking-option small {
-        font-size: 12px;
-        line-height: 1.5;
+        font-size: 10px;
+        line-height: 1.4;
         color: #5c554d;
     }
 
     .booking-option strong {
-        margin-top: 12px;
-
-        font-size: 23px;
+        margin-top: 10px;
+        font-size: 18px;
         color: var(--gold);
     }
 
@@ -1500,68 +1529,11 @@ nav .reservation-btn:hover {
         padding: 20px;
     }
 
-    .booking-total {
-        font-size: 28px;
-    }
-}
-
-/* AJUSTEMENTS RESERVATION */
-
-/* Total moins gros sur ordinateur */
-.booking-total {
-    font-size: 28px;
-}
-
-/* Espace entre téléphone et message optionnel */
-.booking-grid + label {
-    margin-top: 18px;
-}
-
-/* MOBILE : cartes plus compactes */
-@media (max-width: 768px) {
-
-    .booking-card {
-        padding: 30px 18px;
-    }
-
-    .booking-card h1 {
-        font-size: 42px;
-    }
-
-    .booking-step h2 {
-        font-size: 26px;
-    }
-
-    .booking-options {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .booking-option {
-        padding: 14px 12px;
-        min-height: 118px;
-    }
-
-    .booking-option span {
-        font-size: 22px;
-        line-height: 1.05;
-    }
-
-    .booking-option small {
-        font-size: 10px;
-        line-height: 1.4;
-    }
-
-    .booking-option strong {
-        font-size: 18px;
-        margin-top: 10px;
+    .booking-summary li {
+        font-size: 13px;
     }
 
     .booking-total {
         font-size: 24px;
-    }
-
-    .booking-summary li {
-        font-size: 13px;
     }
 }
