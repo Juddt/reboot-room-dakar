@@ -1502,3 +1502,63 @@ nav .reservation-btn:hover {
     }
 }
 
+/* AJUSTEMENTS RESERVATION */
+
+/* Total moins gros sur ordinateur */
+.booking-total {
+    font-size: 28px;
+}
+
+/* Espace entre téléphone et message optionnel */
+.booking-grid + label {
+    margin-top: 18px;
+}
+
+/* MOBILE : cartes plus compactes */
+@media (max-width: 768px) {
+
+    .booking-card {
+        padding: 30px 18px;
+    }
+
+    .booking-card h1 {
+        font-size: 42px;
+    }
+
+    .booking-step h2 {
+        font-size: 26px;
+    }
+
+    .booking-options {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .booking-option {
+        padding: 14px 12px;
+        min-height: 118px;
+    }
+
+    .booking-option span {
+        font-size: 22px;
+        line-height: 1.05;
+    }
+
+    .booking-option small {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .booking-option strong {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .booking-total {
+        font-size: 24px;
+    }
+
+    .booking-summary li {
+        font-size: 13px;
+    }
+}
