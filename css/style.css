@@ -1568,3 +1568,38 @@ nav .spa-btn:hover {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
+
+.booking-option {
+    position: relative;
+    padding-left: 58px;
+}
+
+.booking-option .choice-check {
+    position: absolute;
+    left: 22px;
+    top: 28px;
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #BFA46A;
+    border-radius: 50%;
+}
+
+.booking-option.selected .choice-check {
+    background-color: #BFA46A;
+}
+
+.booking-option.selected .choice-check::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+
+    width: 4px;
+    height: 8px;
+
+    border: solid #050505;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
