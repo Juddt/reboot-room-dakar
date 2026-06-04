@@ -15,314 +15,317 @@
 
 <body class="reservation-page">
 
-    <main class="booking-page"> 
+<main class="booking-page">
 
-        <a href="index.html" class="booking-back">← Retour au site</a>
+    <a href="index.html" class="booking-back">← Retour au site</a>
 
-        <section class="booking-card">
+    <section class="booking-card">
 
-            <p class="service-label">Réservation</p>
+        <p class="service-label">Réservation</p>
 
-            <h1>Réserver une expérience</h1>
+        <h1>Réserver une expérience</h1>
 
-            <p class="booking-intro">
-                Sélectionnez une ou plusieurs expériences, choisissez une date et un créneau.
-                La demande sera envoyée directement sur WhatsApp pour confirmation.
-            </p>
+        <p class="booking-intro">
+            Sélectionnez une ou plusieurs expériences, choisissez une date et un créneau.
+            La demande sera envoyée directement sur WhatsApp pour confirmation.
+        </p>
 
-            <div class="booking-form">
+        <div class="booking-form">
 
-               <div class="booking-step">
-                    <span>01</span>
-                    <h2>Choisissez vos expériences</h2>
+            <div class="booking-step">
+                <span>01</span>
+                <h2>Choisissez vos expériences</h2>
 
-                    <div class="booking-tabs">
-                        <button type="button" class="booking-tab active" data-booking-tab="sessions">Séances Individuelles</button>
-                        <button type="button" class="booking-tab" data-booking-tab="reboot">Parcours Reboot</button>
-                        <button type="button" class="booking-tab" data-booking-tab="performance">Parcours Performance</button>
-                        <button type="button" class="booking-tab" data-booking-tab="hammam">Formules Hammam</button>
-                        <button type="button" class="booking-tab" data-booking-tab="carte-cadeau">Carte cadeau</button>
-                    </div>
-
-                    <div class="booking-options active" id="sessions">
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Cryo / Ice Bath">
-                            <span>Cryo / Ice Bath</span>
-                            <strong>10 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam 45 min">
-                            <span>Hammam 45 min</span>
-                            <strong>25 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Pressothérapie 30 min">
-                            <span>Pressothérapie 30 min</span>
-                            <strong>12 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Massage 30 min">
-                            <span>Massage 30 min</span>
-                            <strong>15 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Massage 60 min">
-                            <span>Massage 60 min</span>
-                            <strong>25 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Douche Vitamine C">
-                            <span>Douche Vitamine C</span>
-                            <strong>5 000 FCFA</strong>
-                        </button>
-                    </div>
-
-                    <div class="booking-options" id="reboot">
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Recovery">
-                            <span>Recovery</span>
-                            <small>Cryo · Pressothérapie · Douche Vitamine C</small>
-                            <strong>24 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Therapy">
-                            <span>Therapy</span>
-                            <small>Hammam · Cryo · Douche Vitamine C</small>
-                            <strong>36 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Régénération">
-                            <span>Régénération</span>
-                            <small>Hammam · Massage 30 min · Douche Vitamine C</small>
-                            <strong>40 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Détente">
-                            <span>Détente</span>
-                            <small>Hammam · Massage relaxant 60 min</small>
-                            <strong>45 000 FCFA</strong>
-                        </button>
-                    </div>
-
-                    <div class="booking-options" id="performance">
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Performance">
-                            <span>Performance</span>
-                            <small>Cryo · Massage 30 min · Pressothérapie · Douche Vitamine C</small>
-                            <strong>38 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Intense">
-                            <span>Intense</span>
-                            <small>Hammam · Cryo · Pressothérapie · Douche Vitamine C</small>
-                            <strong>45 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Reboot Expérience">
-                            <span>Reboot Expérience</span>
-                            <small>Hammam · Cryo · Massage 60 min · Pressothérapie · Douche Vitamine C</small>
-                            <strong>65 000 FCFA</strong>
-                        </button>
-                    </div>
-
-                  <div class="booking-options" id="hammam">
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — L’Essentiel">
-                            <span>L’Essentiel</span>
-                            <small>Gommage · Lavage cheveux · Savonnage</small>
-                            <strong>25 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Traditionnel">
-                            <span>Traditionnel</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Rhassoul · Huile d’argan</small>
-                            <strong>35 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Sculptant">
-                            <span>Sculptant</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Rhassoul · Algues marines</small>
-                            <strong>35 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Therapy">
-                            <span>Therapy</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Douche Vitamine C</small>
-                            <strong>36 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Régénérant">
-                            <span>Régénérant</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Massage sportif 30 min · Douche Vitamine C</small>
-                            <strong>40 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Détente">
-                            <span>Détente</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Massage relaxant 60 min</small>
-                            <strong>45 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Intense">
-                            <span>Intense</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Pressothérapie · Douche Vitamine C</small>
-                            <strong>45 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — L’Ancestral">
-                            <span>L’Ancestral</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Enveloppement au choix · Massage relaxant 60 min · Douche Vitamine C</small>
-                            <strong>55 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Reboot Expérience">
-                            <span>Reboot Expérience</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Massage 60 min · Pressothérapie · Douche Vitamine C</small>
-                            <strong>65 000 FCFA</strong>
-                        </button>
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Hammam — Royal">
-                            <span>Royal</span>
-                            <small>Gommage · Lavage cheveux · Savonnage · Enveloppement · Massage 60 min · Soin visage · Luminothérapie · Pressothérapie · Douche Vitamine C</small>
-                            <strong>100 000 FCFA</strong>
-                        </button>
-
-                    </div>
-
-                    <div class="booking-options" id="carte-cadeau">
-
-                        <button type="button" class="booking-option">
-    <div class="choice-check"></div> data-service="Carte cadeau — Montant libre" data-gift="true">
-                            <span>Carte cadeau</span>
-                            <small>Choisissez librement le montant à offrir</small>
-                            <strong>À définir</strong>
-                        </button>
-
-                        <label class="gift-card-field">
-                            Montant souhaité
-                            <input type="number" id="giftCardAmount" placeholder="Ex : 50000">
-                        </label>
-
-                    </div>
+                <div class="booking-tabs">
+                    <button type="button" class="booking-tab active" data-booking-tab="sessions">Séances Individuelles</button>
+                    <button type="button" class="booking-tab" data-booking-tab="reboot">Parcours Reboot</button>
+                    <button type="button" class="booking-tab" data-booking-tab="performance">Parcours Performance</button>
+                    <button type="button" class="booking-tab" data-booking-tab="hammam">Formules Hammam</button>
+                    <button type="button" class="booking-tab" data-booking-tab="carte-cadeau">Carte cadeau</button>
                 </div>
 
-                <div class="booking-summary">
-                    <h3>Votre sélection</h3>
-                    <ul id="bookingSummaryList">
-                        <li>Aucune expérience sélectionnée</li>
-                    </ul>
-                    <div class="booking-total">
-                        Total : <span id="bookingTotal">0 FCFA</span>
-                    </div>
-                </div>
-                                                
+                <div class="booking-options active" id="sessions">
 
+                    <button type="button" class="booking-option" data-service="Cryo / Ice Bath">
+                        <div class="choice-check"></div>
+                        <span>Cryo / Ice Bath</span>
+                        <strong>10 000 FCFA</strong>
+                    </button>
 
+                    <button type="button" class="booking-option" data-service="Hammam 45 min">
+                        <div class="choice-check"></div>
+                        <span>Hammam 45 min</span>
+                        <strong>25 000 FCFA</strong>
+                    </button>
 
+                    <button type="button" class="booking-option" data-service="Pressothérapie 30 min">
+                        <div class="choice-check"></div>
+                        <span>Pressothérapie 30 min</span>
+                        <strong>12 000 FCFA</strong>
+                    </button>
 
-                <div class="booking-step">
-                    <span>02</span>
-                    <h2>Choisissez votre créneau</h2>
+                    <button type="button" class="booking-option" data-service="Massage 30 min">
+                        <div class="choice-check"></div>
+                        <span>Massage 30 min</span>
+                        <strong>15 000 FCFA</strong>
+                    </button>
 
-                    <div class="booking-grid">
-                        <label>
-                            Date souhaitée
-                            <input type="date" id="bookingDate">
-                        </label>
+                    <button type="button" class="booking-option" data-service="Massage 60 min">
+                        <div class="choice-check"></div>
+                        <span>Massage 60 min</span>
+                        <strong>25 000 FCFA</strong>
+                    </button>
 
-                        <label>
-                            Heure souhaitée
-                            <select id="bookingTime">
-                                <option value="">Choisir un créneau</option>
-                                <option value="06:30">06:30</option>
-                                <option value="07:00">07:00</option>
-                                <option value="07:30">07:30</option>
-                                <option value="08:00">08:00</option>
-                                <option value="08:30">08:30</option>
-                                <option value="09:00">09:00</option>
-                                <option value="09:30">09:30</option>
-                                <option value="10:00">10:00</option>
-                                <option value="10:30">10:30</option>
-                                <option value="11:00">11:00</option>
-                                <option value="11:30">11:30</option>
-                                <option value="12:00">12:00</option>
-                                <option value="12:30">12:30</option>
-                                <option value="13:00">13:00</option>
-                                <option value="13:30">13:30</option>
-                                <option value="14:00">14:00</option>
-                                <option value="14:30">14:30</option>
-                                <option value="15:00">15:00</option>
-                                <option value="15:30">15:30</option>
-                                <option value="16:00">16:00</option>
-                                <option value="16:30">16:30</option>
-                                <option value="17:00">17:00</option>
-                                <option value="17:30">17:30</option>
-                                <option value="18:00">18:00</option>
-                                <option value="18:30">18:30</option>
-                                <option value="19:00">19:00</option>
-                            </select>
-                        </label>
-                    </div>
+                    <button type="button" class="booking-option" data-service="Douche Vitamine C">
+                        <div class="choice-check"></div>
+                        <span>Douche Vitamine C</span>
+                        <strong>5 000 FCFA</strong>
+                    </button>
+
                 </div>
 
-                <div class="booking-step">
-                    <span>03</span>
-                    <h2>Vos informations</h2>
+                <div class="booking-options" id="reboot">
 
-                    <div class="booking-grid">
-                        <label>
-                            Nom
-                            <input type="text" id="bookingName" placeholder="Votre nom">
-                        </label>
+                    <button type="button" class="booking-option" data-service="Recovery">
+                        <div class="choice-check"></div>
+                        <span>Recovery</span>
+                        <small>Cryo · Pressothérapie · Douche Vitamine C</small>
+                        <strong>24 000 FCFA</strong>
+                    </button>
 
-                        <label>
-                            Téléphone
-                            <input type="tel" id="bookingPhone" placeholder="Ex : 77 123 45 67">
-                        </label>
-                    </div>
+                    <button type="button" class="booking-option" data-service="Therapy">
+                        <div class="choice-check"></div>
+                        <span>Therapy</span>
+                        <small>Hammam · Cryo · Douche Vitamine C</small>
+                        <strong>36 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Régénération">
+                        <div class="choice-check"></div>
+                        <span>Régénération</span>
+                        <small>Hammam · Massage 30 min · Douche Vitamine C</small>
+                        <strong>40 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Détente">
+                        <div class="choice-check"></div>
+                        <span>Détente</span>
+                        <small>Hammam · Massage relaxant 60 min</small>
+                        <strong>45 000 FCFA</strong>
+                    </button>
+
+                </div>
+
+                <div class="booking-options" id="performance">
+
+                    <button type="button" class="booking-option" data-service="Performance">
+                        <div class="choice-check"></div>
+                        <span>Performance</span>
+                        <small>Cryo · Massage 30 min · Pressothérapie · Douche Vitamine C</small>
+                        <strong>38 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Intense">
+                        <div class="choice-check"></div>
+                        <span>Intense</span>
+                        <small>Hammam · Cryo · Pressothérapie · Douche Vitamine C</small>
+                        <strong>45 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Reboot Expérience">
+                        <div class="choice-check"></div>
+                        <span>Reboot Expérience</span>
+                        <small>Hammam · Cryo · Massage 60 min · Pressothérapie · Douche Vitamine C</small>
+                        <strong>65 000 FCFA</strong>
+                    </button>
+
+                </div>
+
+                <div class="booking-options" id="hammam">
+
+                    <button type="button" class="booking-option" data-service="Hammam — L’Essentiel">
+                        <div class="choice-check"></div>
+                        <span>L’Essentiel</span>
+                        <small>Gommage · Lavage cheveux · Savonnage</small>
+                        <strong>25 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Traditionnel">
+                        <div class="choice-check"></div>
+                        <span>Traditionnel</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Rhassoul · Huile d’argan</small>
+                        <strong>35 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Sculptant">
+                        <div class="choice-check"></div>
+                        <span>Sculptant</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Rhassoul · Algues marines</small>
+                        <strong>35 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Therapy">
+                        <div class="choice-check"></div>
+                        <span>Therapy</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Douche Vitamine C</small>
+                        <strong>36 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Régénérant">
+                        <div class="choice-check"></div>
+                        <span>Régénérant</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Massage sportif 30 min · Douche Vitamine C</small>
+                        <strong>40 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Détente">
+                        <div class="choice-check"></div>
+                        <span>Détente</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Massage relaxant 60 min</small>
+                        <strong>45 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Intense">
+                        <div class="choice-check"></div>
+                        <span>Intense</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Pressothérapie · Douche Vitamine C</small>
+                        <strong>45 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — L’Ancestral">
+                        <div class="choice-check"></div>
+                        <span>L’Ancestral</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Enveloppement au choix · Massage relaxant 60 min · Douche Vitamine C</small>
+                        <strong>55 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Reboot Expérience">
+                        <div class="choice-check"></div>
+                        <span>Reboot Expérience</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Cryo / Ice Bath · Massage 60 min · Pressothérapie · Douche Vitamine C</small>
+                        <strong>65 000 FCFA</strong>
+                    </button>
+
+                    <button type="button" class="booking-option" data-service="Hammam — Royal">
+                        <div class="choice-check"></div>
+                        <span>Royal</span>
+                        <small>Gommage · Lavage cheveux · Savonnage · Enveloppement · Massage 60 min · Soin visage · Luminothérapie · Pressothérapie · Douche Vitamine C</small>
+                        <strong>100 000 FCFA</strong>
+                    </button>
+
+                </div>
+
+                <div class="booking-options" id="carte-cadeau">
+
+                    <button type="button" class="booking-option" data-service="Carte cadeau — Montant libre" data-gift="true">
+                        <div class="choice-check"></div>
+                        <span>Carte cadeau</span>
+                        <small>Choisissez librement le montant à offrir</small>
+                        <strong>À définir</strong>
+                    </button>
+
+                    <label class="gift-card-field">
+                        Montant souhaité
+                        <input type="number" id="giftCardAmount" placeholder="Ex : 50000">
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <h3>Votre sélection</h3>
+                <ul id="bookingSummaryList">
+                    <li>Aucune expérience sélectionnée</li>
+                </ul>
+
+                <div class="booking-total">
+                    Total : <span id="bookingTotal">0 FCFA</span>
+                </div>
+            </div>
+
+            <div class="booking-step">
+                <span>02</span>
+                <h2>Choisissez votre créneau</h2>
+
+                <div class="booking-grid">
+                    <label>
+                        Date souhaitée
+                        <input type="date" id="bookingDate">
+                    </label>
 
                     <label>
-                        Message optionnel
-                        <textarea id="bookingMessage" placeholder="Précision, demande particulière..."></textarea>
+                        Heure souhaitée
+                        <select id="bookingTime">
+                            <option value="">Choisir un créneau</option>
+                            <option value="06:30">06:30</option>
+                            <option value="07:00">07:00</option>
+                            <option value="07:30">07:30</option>
+                            <option value="08:00">08:00</option>
+                            <option value="08:30">08:30</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:30">09:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="booking-step">
+                <span>03</span>
+                <h2>Vos informations</h2>
+
+                <div class="booking-grid">
+                    <label>
+                        Nom
+                        <input type="text" id="bookingName" placeholder="Votre nom">
+                    </label>
+
+                    <label>
+                        Téléphone
+                        <input type="tel" id="bookingPhone" placeholder="Ex : 77 123 45 67">
                     </label>
                 </div>
 
-                <button id="bookingButton" class="booking-button">
-                    Confirmer sur WhatsApp
-                </button>
-
-                <p class="booking-note">
-                    Après validation, l’équipe Reboot Room vous confirmera le rendez-vous.
-                    Cette version permet une demande de réservation rapide ; la confirmation finale se fait par WhatsApp.
-                </p>
-
+                <label>
+                    Message optionnel
+                    <textarea id="bookingMessage" placeholder="Précision, demande particulière..."></textarea>
+                </label>
             </div>
 
-        </section>
+            <button id="bookingButton" class="booking-button">
+                Confirmer sur WhatsApp
+            </button>
 
-    </main>
+            <p class="booking-note">
+                Après validation, l’équipe Reboot Room vous confirmera le rendez-vous.
+                Cette version permet une demande de réservation rapide ; la confirmation finale se fait par WhatsApp.
+            </p>
 
-    <script src="js/script.js"></script>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
