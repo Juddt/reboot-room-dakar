@@ -1536,6 +1536,21 @@ nav .reservation-btn:hover {
     .booking-total {
         font-size: 24px;
     }
+        nav .reservation-btn,
+    nav .spa-btn {
+        display: block;
+        width: 100%;
+        max-width: 430px;
+
+        margin: 12px auto 0;
+        padding: 16px 18px;
+
+        text-align: center;
+    }
+
+    nav .spa-btn {
+        margin-top: 18px;
+    }
 }
 
 nav .spa-btn {
