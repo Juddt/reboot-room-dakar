@@ -1670,3 +1670,126 @@ nav .spa-btn:hover {
         color: var(--cream);
     }
 }
+
+
+/* RESERVATION MOBILE - VERSION COMPACTE PREMIUM */
+@media (max-width: 768px) {
+
+    .booking-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .booking-option {
+        min-height: auto;
+        padding: 18px 18px 18px 58px;
+
+        display: block;
+        position: relative;
+
+        border: 1px solid rgba(138, 106, 60, 0.32);
+        background-color: rgba(255, 255, 255, 0.14);
+
+        text-align: left;
+    }
+
+    .booking-option .choice-check {
+        position: absolute;
+        left: 18px;
+        top: 22px;
+
+        width: 18px;
+        height: 18px;
+
+        margin: 0;
+
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+    }
+
+    .booking-option span {
+        display: block;
+
+        margin: 0 0 8px;
+
+        font-size: 30px;
+        line-height: 1;
+        color: var(--black);
+    }
+
+    .booking-option small {
+        display: block;
+
+        margin: 0 0 12px;
+
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        line-height: 1.45;
+
+        color: #5c554d;
+    }
+
+    .booking-option strong {
+        display: block;
+
+        margin: 0;
+
+        font-size: 22px;
+        line-height: 1;
+        color: var(--gold);
+    }
+
+    .booking-option.selected {
+        background-color: var(--black);
+        border-color: var(--black);
+    }
+
+    .booking-option.selected span {
+        color: var(--cream);
+    }
+
+    .booking-option.selected small {
+        color: #cfc6b8;
+    }
+
+    .booking-option.selected strong {
+        color: var(--gold);
+    }
+
+    .booking-option.selected .choice-check {
+        background-color: var(--gold);
+    }
+
+    .booking-option.selected .choice-check::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 2px;
+
+        width: 4px;
+        height: 8px;
+
+        border: solid var(--black);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .booking-summary {
+        margin-top: 28px;
+        padding: 18px;
+    }
+
+    .booking-summary h3 {
+        font-size: 10px;
+        letter-spacing: 2.2px;
+    }
+
+    .booking-summary li {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .booking-total {
+        font-size: 22px;
+    }
+}
