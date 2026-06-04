@@ -1793,3 +1793,115 @@ nav .spa-btn:hover {
         font-size: 22px;
     }
 }
+
+
+
+
+
+
+
+/* MOBILE REBOOT — TARIFS + RÉSERVATION COMPACTS */
+@media (max-width: 768px) {
+
+    /* TARIFS */
+    .pricing-section {
+        padding: 55px 16px;
+    }
+
+    .pricing-header {
+        margin-bottom: 34px;
+    }
+
+    .pricing-header h2 {
+        font-size: 42px;
+    }
+
+    .pricing-header p {
+        font-size: 14px;
+    }
+
+    .price-row {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 0;
+    }
+
+    .price-row span {
+        font-size: 24px;
+        line-height: 1.05;
+    }
+
+    .price-row small {
+        font-size: 11px;
+    }
+
+    .price-row strong {
+        font-size: 20px;
+    }
+
+    .pricing-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .pricing-card h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .pricing-card p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .pricing-card strong {
+        margin-top: 14px;
+        font-size: 21px;
+    }
+
+    /* RÉSERVATION */
+    .booking-options {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .booking-option {
+        min-height: auto;
+        padding: 14px 14px 14px 48px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 8px 12px;
+    }
+
+    .booking-option .choice-check {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        width: 17px;
+        height: 17px;
+        transform: translateY(-50%);
+    }
+
+    .booking-option span {
+        margin: 0;
+        font-size: 25px;
+        line-height: 1.05;
+    }
+
+    .booking-option small {
+        grid-column: 1 / 3;
+        margin: 2px 0 0;
+        font-size: 11px;
+        line-height: 1.35;
+    }
+
+    .booking-option strong {
+        margin: 0;
+        font-size: 20px;
+        white-space: nowrap;
+    }
+}
+
+
