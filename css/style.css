@@ -1537,3 +1537,14 @@ nav .reservation-btn:hover {
         font-size: 24px;
     }
 }
+
+nav .spa-btn {
+    padding: 14px 22px;
+    border: 1px solid #050505;
+    color: #050505;
+}
+
+nav .spa-btn:hover {
+    background-color: #050505;
+    color: #ffffff;
+}
