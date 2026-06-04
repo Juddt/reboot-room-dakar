@@ -10,41 +10,23 @@ carousels.forEach((carousel) => {
     let currentIndex = 0;
 
     function showImage(index) {
-        images.forEach((image) => {
-            image.classList.remove("active");
-        });
+        images.forEach((image) => image.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
 
-        dots.forEach((dot) => {
-            dot.classList.remove("active");
-        });
-
-        images[index].classList.add("active");
-
-        if (dots[index]) {
-            dots[index].classList.add("active");
-        }
+        if (images[index]) images[index].classList.add("active");
+        if (dots[index]) dots[index].classList.add("active");
     }
 
     if (nextBtn) {
         nextBtn.addEventListener("click", () => {
-            currentIndex++;
-
-            if (currentIndex >= images.length) {
-                currentIndex = 0;
-            }
-
+            currentIndex = currentIndex >= images.length - 1 ? 0 : currentIndex + 1;
             showImage(currentIndex);
         });
     }
 
     if (prevBtn) {
         prevBtn.addEventListener("click", () => {
-            currentIndex--;
-
-            if (currentIndex < 0) {
-                currentIndex = images.length - 1;
-            }
-
+            currentIndex = currentIndex <= 0 ? images.length - 1 : currentIndex - 1;
             showImage(currentIndex);
         });
     }
@@ -59,21 +41,13 @@ pricingTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         const target = tab.dataset.target;
 
-        pricingTabs.forEach((button) => {
-            button.classList.remove("active");
-        });
-
-        pricingContents.forEach((content) => {
-            content.classList.remove("active");
-        });
+        pricingTabs.forEach((button) => button.classList.remove("active"));
+        pricingContents.forEach((content) => content.classList.remove("active"));
 
         tab.classList.add("active");
 
         const targetContent = document.getElementById(target);
-
-        if (targetContent) {
-            targetContent.classList.add("active");
-        }
+        if (targetContent) targetContent.classList.add("active");
     });
 });
 
@@ -85,37 +59,58 @@ const bookingOptionsGroups = document.querySelectorAll(".booking-options");
 const bookingOptions = document.querySelectorAll(".booking-option");
 const bookingSummaryList = document.getElementById("bookingSummaryList");
 const bookingTotal = document.getElementById("bookingTotal");
+const giftCardAmountInput = document.getElementById("giftCardAmount");
 
 bookingTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         const target = tab.dataset.bookingTab;
 
-        bookingTabs.forEach((button) => {
-            button.classList.remove("active");
-        });
-
-        bookingOptionsGroups.forEach((group) => {
-            group.classList.remove("active");
-        });
+        bookingTabs.forEach((button) => button.classList.remove("active"));
+        bookingOptionsGroups.forEach((group) => group.classList.remove("active"));
 
         tab.classList.add("active");
 
         const targetGroup = document.getElementById(target);
-
-        if (targetGroup) {
-            targetGroup.classList.add("active");
-        }
+        if (targetGroup) targetGroup.classList.add("active");
     });
 });
 
+function formatPrice(price) {
+    return price.toLocaleString("fr-FR") + " FCFA";
+}
+
+function getGiftCardAmount() {
+    if (!giftCardAmountInput) return 0;
+
+    const amount = parseInt(giftCardAmountInput.value, 10);
+    return isNaN(amount) || amount <= 0 ? 0 : amount;
+}
+
 function getPriceNumber(option) {
+    if (option.dataset.gift === "true") {
+        return getGiftCardAmount();
+    }
+
     const priceText = option.querySelector("strong").textContent;
 
     return parseInt(
         priceText
             .replace(/\s/g, "")
-            .replace("FCFA", "")
+            .replace("FCFA", ""),
+        10
     );
+}
+
+function getServiceName(option) {
+    if (option.dataset.gift === "true") {
+        const amount = getGiftCardAmount();
+
+        return amount > 0
+            ? `Carte cadeau — ${formatPrice(amount)}`
+            : "Carte cadeau — montant à définir";
+    }
+
+    return option.dataset.service;
 }
 
 function updateBookingSummary() {
@@ -134,7 +129,7 @@ function updateBookingSummary() {
     let total = 0;
 
     selectedOptions.forEach((option) => {
-        const serviceName = option.dataset.service;
+        const serviceName = getServiceName(option);
         const price = getPriceNumber(option);
 
         total += price;
@@ -145,7 +140,7 @@ function updateBookingSummary() {
         bookingSummaryList.appendChild(li);
     });
 
-    bookingTotal.textContent = total.toLocaleString("fr-FR") + " FCFA";
+    bookingTotal.textContent = formatPrice(total);
 }
 
 bookingOptions.forEach((option) => {
@@ -155,16 +150,27 @@ bookingOptions.forEach((option) => {
     });
 });
 
+if (giftCardAmountInput) {
+    giftCardAmountInput.addEventListener("input", updateBookingSummary);
+}
+
 if (bookingButton) {
     bookingButton.addEventListener("click", () => {
         const selectedOptions = document.querySelectorAll(".booking-option.selected");
 
         let services = [];
         let total = 0;
+        let giftWithoutAmount = false;
 
         selectedOptions.forEach((option) => {
-            services.push(option.dataset.service);
-            total += getPriceNumber(option);
+            const price = getPriceNumber(option);
+
+            if (option.dataset.gift === "true" && price <= 0) {
+                giftWithoutAmount = true;
+            }
+
+            services.push(getServiceName(option));
+            total += price;
         });
 
         const date = document.getElementById("bookingDate").value;
@@ -173,8 +179,18 @@ if (bookingButton) {
         const phone = document.getElementById("bookingPhone").value;
         const message = document.getElementById("bookingMessage").value;
 
-        if (services.length === 0 || !date || !time || !name) {
-            alert("Merci de choisir au moins une expérience, une date, une heure et votre nom.");
+        if (selectedOptions.length === 0) {
+            alert("Merci de choisir au moins une expérience ou une carte cadeau.");
+            return;
+        }
+
+        if (giftWithoutAmount) {
+            alert("Merci d’indiquer le montant de la carte cadeau.");
+            return;
+        }
+
+        if (!date || !time || !name) {
+            alert("Merci de choisir une date, une heure et votre nom.");
             return;
         }
 
@@ -184,7 +200,7 @@ if (bookingButton) {
             .map((service) => `- ${service}`)
             .join("%0A");
 
-        const totalText = total.toLocaleString("fr-FR") + " FCFA";
+        const totalText = formatPrice(total);
 
         const whatsappMessage =
             `Bonjour Reboot Room,%0A%0A` +
@@ -218,8 +234,6 @@ if (menuToggle && nav) {
 
 navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-        if (nav) {
-            nav.classList.remove("active");
-        }
+        if (nav) nav.classList.remove("active");
     });
 });
