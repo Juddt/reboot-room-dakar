@@ -1256,7 +1256,7 @@ nav .reservation-btn:hover {
     nav li {
         width: 100%;
         text-align: center;
-        padding: 11px 0;
+        padding: 6px 0;
     }
 
     nav a {
@@ -1542,14 +1542,14 @@ nav .reservation-btn:hover {
         width: 100%;
         max-width: 430px;
 
-        margin: 12px auto 0;
+        margin: 6px auto 0;
         padding: 16px 18px;
 
         text-align: center;
     }
 
     nav .spa-btn {
-        margin-top: 18px;
+        margin-top: 8px;
     }
 }
 
